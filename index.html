@@ -28,7 +28,7 @@
         <div class="container">
                 <div class="row justify-content-center">
                              <div class="col-3">
-                               <p class="guess">  Your Word:<br> <hr> <span id="user-guess"></span> </p>
+                               <p class="guess">  Your Word:<br> <hr> <span id="baseballGuessPlaceholder"></span> </p>
                              </div>
        
                              <div class="col-3">
@@ -69,78 +69,20 @@
         var winsScoreElement = document.getElementById('wins-score');
         var lossesScoreElement = document.getElementById('losses-score');
         var livesScoreElement = document.getElementById('lives-score');
-        var userGuessElement = document.getElementById('user-guess');
+        var userGuessElement = document.getElementById('baseballGuessPlaceholder');
         var guessElement= document.getElementById("guessed");
 
-        function newgame() {
-            gameRunning = true;
-            lives = 9;
-            guessedLetterBank = [];
-            incorrectLetterBank = [];
-            baseballGuessPlaceholder = [];
-        }
+
         var baseballGuess = baseballChoices[Math.floor(Math.random() * baseballChoices.length)];
             console.log(baseballGuess);
 
-        //create placeholder spaces out of new word (baseballGuess)
-        for (var i-0; 1 < baseballGuess.length; i++){
-            if (baseballGuess === " ") {
-                baseballGuessPlaceholder.push("  ");
-            } else{
-                baseballGuessPlaceholder.push("_");
-            }
-        }
 
         // Update text content of the html elements for user guess 
-        userGuessElement.textContent = userGuess;
+        userGuessElement.textContent = baseballGuessPlaceholder;
         guessElement.textContent = guessChoices;
         winsScoreElement.textContent = wins;
         lossesScoreElement.textContent = losses;
         livesScoreElement.textContent = lives;
-
-
-
-        // Use onkeyup event to run the function we created earlier each time a key is pressed.
-        document.onkeyup = keyPress;
-
-
-        // Create function that will be used to handle the key press.
-        // Capture the key that the user pressed.
-        function keyPress(event) {
-            var userGuess = event.key;
-
-
-
-
-
-        
-
-
-        if (userGuess === baseballGuess) {
-            resetGame();
-            wins++;
-            alert("You have chosen... wisely. You will have a great future, I can see it already");
-        }
-                
-        if (userGuess != baseballGuess) {
-            lives--;
-            guessChoices.push(userGuess);
-        }
-              
-        if (lives === 0) {
-            losses++;
-            guessChoices = [];
-            lives = 9;
-            alert("You are not Nostradamus. You are a loser. Leave");
-        }
-        
-
-        
-
-
-
-}
-
 
 
 
