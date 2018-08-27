@@ -28,7 +28,7 @@
         <div class="container">
                 <div class="row justify-content-center">
                              <div class="col-3">
-                               <p class="guess">  Your Word:<br> <hr> <span id="baseballGuessPlaceholder"></span> </p>
+                               <p class="guess">  Your Word:<br> <hr> <span id="user-guess"></span> </p>
                              </div>
        
                              <div class="col-3">
@@ -54,37 +54,31 @@
 
 <script>
 
-        var wins = 0;
-        var losses = 0;
-        var lives = 9;
-        var baseballChoices = ['Yankees', 'Braves', 'Cardinals', 'Redsox', 'Whitesox', 'Phillies', 'Nationals', 'Reds', 'BlueJays', 'Pirates', 'Mets', 'Rays', 'Rangers', 'Royals', 'Angels','Mariners', 'Mariners', 'Orioles', 'Twins', 'Cubs', 'Astros', 'Dodgers', 'Rockies', 'Marlins' , 'Athletics', 'Brewers'];
-        var guessChoices = [];
-        var gameRunning = false;
-        var baseballGuess = ""; 
-        var baseballGuessPlaceholder = [];
-        var guessedLetterBank = [];
-        var incorrectLetterBank = [];
+        var teams = ['Yankees', 'Braves', 'Cardinals', 'Redsox', 'Whitesox', 'Phillies', 'Nationals', 'Reds', 'BlueJays', 'Pirates', 'Mets', 'Rays', 'Rangers', 'Royals', 'Angels','Mariners', 'Mariners', 'Orioles', 'Twins', 'Cubs', 'Astros', 'Dodgers', 'Rockies', 'Marlins' , 'Athletics', 'Brewers'];
+        var answerArray = [];
 
-        // Get reference to html elements for wins, losses, and lives and user-guess.
-        var winsScoreElement = document.getElementById('wins-score');
-        var lossesScoreElement = document.getElementById('losses-score');
-        var livesScoreElement = document.getElementById('lives-score');
-        var userGuessElement = document.getElementById('baseballGuessPlaceholder');
-        var guessElement= document.getElementById("guessed");
+        var word = teams[Math.floor(Math.random() * teams.length)];
+            console.log(word);
 
+        //make answer array blank spaces
+        for (var i = 0; i < word.length; i++) {
+            answerArray.push("_");
+            console.log(answerArray);
+        }
 
-        var baseballGuess = baseballChoices[Math.floor(Math.random() * baseballChoices.length)];
-            console.log(baseballGuess);
+        var userGuessElement = document.getElementById('user-guess');
+        userGuessElement.textContent = answerArray;
 
+        document.onkeyup = keyPress;
 
-        // Update text content of the html elements for user guess 
-        userGuessElement.textContent = baseballGuessPlaceholder;
-        guessElement.textContent = guessChoices;
-        winsScoreElement.textContent = wins;
-        lossesScoreElement.textContent = losses;
-        livesScoreElement.textContent = lives;
+        function keyPress(event) {
+            var userGuess = event.key; 
+            console.log(userGuess);
 
 
+
+
+        }
 
 
 </script>
