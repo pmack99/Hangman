@@ -65,10 +65,11 @@
             answerArray.push("_");
             console.log(answerArray);
         }
-
+        //displays the underscore for every chosen word
         var userGuessElement = document.getElementById('user-guess');
         userGuessElement.textContent = answerArray;
 
+        //Capture user keypress
         document.onkeyup = keyPress;
 
         function keyPress(event) {
@@ -76,9 +77,18 @@
             console.log(userGuess);
 
 
+        //try to match 'userGuess' to'word' chosen
+        if (word.indexof(userGuess) > -1);
+            alert("yes")
+}
 
 
-        }
+
+
+
+
+        
+
 
 
 </script>
