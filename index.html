@@ -53,9 +53,12 @@
 
 
 <script>
-
+        var wins = 0;
+        var losses = 0;
+        var lives = 9;
         var teams = ['Yankees', 'Braves', 'Cardinals', 'Redsox', 'Whitesox', 'Phillies', 'Nationals', 'Reds', 'BlueJays', 'Pirates', 'Mets', 'Rays', 'Rangers', 'Royals', 'Angels','Mariners', 'Mariners', 'Orioles', 'Twins', 'Cubs', 'Astros', 'Dodgers', 'Rockies', 'Marlins' , 'Athletics', 'Brewers'];
         var answerArray = [];
+        var guessChoices = [];
 
         var word = teams[Math.floor(Math.random() * teams.length)];
             console.log(word);
@@ -67,7 +70,21 @@
         }
         //displays the underscore for every chosen word
         var userGuessElement = document.getElementById('user-guess');
-        userGuessElement.textContent = answerArray;
+        var guessElement= document.getElementById("guessed");
+
+        //var winsElement = document.getElementById('wins-score');
+        //var lossesElement = document.getElementById('losses-score');
+        //var livesElement = document.getElementById('ties-score');
+
+
+        // Update all of the scores.
+        //userGuessElement.textContent = answerArray;
+        //winsElement.textContent = wins;
+        //lossesElement.textContent = losses;
+        //livesElement.textContent = lives;
+        //guessElement.textContent = guessChoices;
+
+        
 
         //Capture user keypress
         document.onkeyup = keyPress;
@@ -78,8 +95,25 @@
 
 
         //try to match 'userGuess' to'word' chosen
-        if (word.indexof(userGuess) > -1);
-            alert("yes")
+        
+        if (word.indexof(userGuess) > -1){
+            
+            //need to show letters on spaces
+
+        }
+        if (word.indexof(userGuess)  < 1){
+            lives--;
+            guessChoices.push(userGuess);
+            //display incorrect letter in previousGuesses
+        }
+           
+
+        if (lives === 0){
+            losses++;
+            guessChoices = [];
+            lives = 9;
+        }
+
 }
 
 
