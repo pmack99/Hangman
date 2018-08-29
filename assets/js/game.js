@@ -6,7 +6,7 @@ var wrongLetter = [];
 var underScores = [];
 var userGuesses = [];
 var randWord;
-var winCounter = 0;
+
 
 
 function startGame(){
@@ -29,19 +29,6 @@ function startGame(){
         document.getElementById("lives-score").textContent = guessesLeft;
 }
 
-function winLose(){
-    if (winCounter === randWord.length)
-{
-        alert("Winner");
-        startGame();
-}
-else if(guessesLeft ===0)
-{
-        alert("loser");
-        startGame();
-
-}
-
 
 //event.key will save the key pressed
 document.onkeyup = function(event){
@@ -57,9 +44,7 @@ document.onkeyup = function(event){
                 underScores[i] = userGuesses;
                 console.log(underScores);
                 document.getElementById("user-guess").textContent = userGuesses;
-                winCounter++;
-                winLose();
-                wins++;
+
                 }
             }
 
@@ -70,8 +55,8 @@ document.onkeyup = function(event){
         wrongLetter.push(userGuesses);
         document.getElementById("guessed").textContent = wrongLetter;
         guessesLeft--;
-        document.getElementById("lives-score").textContent = guessesLeft;
+        //document.getElementById("lives-score").textContent = guessesLeft;
     }
 }
-}
+
 startGame();
