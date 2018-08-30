@@ -48,7 +48,7 @@ document.onkeyup = function(event){
                 console.log(underScores);
                 winCounter++;
                 winlose();
-                document.getElementById("user-guess").textContent = userGuesses;
+                document.getElementById("user-guess").textContent = underScores.join("");
 
                 }
             }
@@ -64,6 +64,8 @@ document.onkeyup = function(event){
     }
         if(guessesLeft ===0) {
             alert("loser");
+            loss--;
+            document.getElementById("losses-score").textContent = loss;
             startGame();
             
         }
