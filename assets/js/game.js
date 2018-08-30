@@ -46,6 +46,8 @@ var winCounter = 0;
             {
                 underScores[i] = userGuesses;
                 console.log(underScores);
+                var sound = document.getElementById("audio");
+                sound.play();
                 winCounter++;
                 winlose();
                 document.getElementById("user-guess").textContent = underScores.join(" ");
@@ -59,14 +61,18 @@ var winCounter = 0;
     {
             wrongLetter.push(userGuesses);
             document.getElementById("guessed").textContent = wrongLetter;
+            var sound = document.getElementById("audio_three");
+            sound.play();
             guessesLeft--;
             document.getElementById("lives-score").textContent = guessesLeft;
     }
         if(guessesLeft ===0) {
-            alert("loser");
             loss--;
+            var sound = document.getElementById("audio_two");
+            sound.play();
             document.getElementById("losses-score").textContent = loss;
             userGuesses = [];
+            alert("loser");
             startGame();
             
         }
