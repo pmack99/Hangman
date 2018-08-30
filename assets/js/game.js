@@ -9,6 +9,8 @@ var randWord;
 var winCounter = 0;
 
 
+
+
     function startGame(){
 
          //reset
@@ -29,7 +31,7 @@ var winCounter = 0;
     }
         //prints underscores to screen 
         document.getElementById('user-guess').textContent = underScores.join(" ");
-    
+        document.getElementById("guessed").textContent = wrongLetter;
         document.getElementById("lives-score").textContent = guessesLeft;
 
 
@@ -91,7 +93,6 @@ function winlose(){
         wins++;
         document.getElementById("wins-score").textContent = wins;
         userGuesses = 0;
-        startGame();
     }
 
 

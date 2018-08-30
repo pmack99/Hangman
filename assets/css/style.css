@@ -1,22 +1,10 @@
-#bg {
-    position: fixed; 
-    top: -50%; 
-    left: -50%; 
-    width: 200%; 
-    height: 200%;
+html { 
+    background: url(giants.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
-  #bg img {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-    margin: auto; 
-    min-width: 50%;
-    min-height: 50%;
-    z-index: -1;
-    opacity: .4;
-}
 
 container{
     display: grid;
@@ -24,6 +12,7 @@ container{
     margin-right: auto;
     text-align: center;
     justify-content: center;
+    opacity: .5;
 }
 
 h1{
@@ -54,4 +43,3 @@ h2{
     margin: 20px;
     margin-top: 0px;
 }
-

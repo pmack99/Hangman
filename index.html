@@ -11,19 +11,22 @@
 
   </head>
   <body>
-    <div class="wrapper">
 
 
-        <div class="jumbotron jumbotron-fluid">
-            <div id="bg"> <img src="assets/images/giants.jpg" alt=""> </div>
-                    
-                    <div class="column-12">
-                    <h1 class="display-5">MLB Baseball Hangman!</h1>
-                    <h2>Guess the Major League Baseball team names!</h2>
-                    <h2>Press a key to get started!</h2>
-                    <hr>
-            </div>
-        </div>
+ <div class="wrapper">
+                
+                <div class="jumbotron jumbotron-fluid">
+
+                        <div class="column-12 text-center">
+                        <h1 class="display-5">MLB Baseball Hangman!</h1>
+                        <h2>Guess the Major League Baseball team names. Don't forget to capitalize the first letter of the team!</h2>
+                        <h2>Press "PLAY BALL" to get start and restart the game!</h2>    
+                        <hr>                            
+                        <button onclick="startGame()">PLAY BALL</button> 
+                </div>
+
+                </div>
+
 
         <div class="container">
                 <div class="row justify-content-center">
@@ -47,9 +50,14 @@
        
                              <div class="col-3">
                                    <p class="wrongGuess"> Previous Guesses:<br> <hr> <span id="guessed"></span>  </p>
-                             </div>
-               </div>
-           </div>
+                </div>
+        </div>
+        
+</div>
+
+
+
+
            <audio id="audio" src="assets/audio/hit.mp3" autostart="false" ></audio>
            <audio id="audio_two" src="assets/audio/out.mp3" autostart="false" ></audio> 
            <audio id="audio_three" src="assets/audio/strike.mp3" autostart="false" ></audio> 
