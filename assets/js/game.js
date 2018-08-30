@@ -83,6 +83,8 @@ startGame();
 
 function winlose(){
     if(winCounter === randWord.length) {
+        var sound = document.getElementById("audio_four");
+        sound.play();
         alert("winner");
         wins++;
         userGuesses = 0;
