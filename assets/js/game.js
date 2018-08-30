@@ -16,6 +16,7 @@ var winCounter = 0;
         guessesLeft = 9;            
         winCounter = 0;
         underScores = [];
+        userGuesses = [];
 
         //pick random word
         randWord = wordbank[Math.floor(Math.random() * wordbank.length)];
@@ -30,6 +31,8 @@ var winCounter = 0;
         document.getElementById('user-guess').textContent = underScores.join(" ");
     
         document.getElementById("lives-score").textContent = guessesLeft;
+
+
 }
 
 
@@ -72,7 +75,7 @@ var winCounter = 0;
             sound.play();
             document.getElementById("losses-score").textContent = loss;
             userGuesses = [];
-            alert("loser");
+            alert("Maybe baseball isn't your thing... You're OUT!");
             startGame();
             
         }
@@ -86,11 +89,9 @@ function winlose(){
         var sound = document.getElementById("audio_four");
         sound.play();
         wins++;
-        userGuesses = 0;
         document.getElementById("wins-score").textContent = wins;
-        alert("winner");
+        userGuesses = 0;
         startGame();
-        
     }
 
 
