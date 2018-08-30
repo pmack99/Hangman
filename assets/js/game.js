@@ -85,10 +85,10 @@ function winlose(){
     if(winCounter === randWord.length) {
         var sound = document.getElementById("audio_four");
         sound.play();
-        alert("winner");
         wins++;
         userGuesses = 0;
         document.getElementById("wins-score").textContent = wins;
+        alert("winner");
         startGame();
         
     }
