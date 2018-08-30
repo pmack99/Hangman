@@ -9,8 +9,6 @@ var randWord;
 var winCounter = 0;
 
 
-
-
     function startGame(){
 
          //reset
