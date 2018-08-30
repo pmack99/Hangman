@@ -6,6 +6,7 @@ var wrongLetter = [];
 var underScores = [];
 var userGuesses = [];
 var randWord;
+var winCounter = 0;
 
 
 
@@ -25,6 +26,8 @@ function startGame(){
         //reset
         wrongLetter = [];
         guessesLeft = 9;
+        underScores = [];
+        winCounter = 0;
         
         document.getElementById("lives-score").textContent = guessesLeft;
 }
@@ -43,6 +46,8 @@ document.onkeyup = function(event){
             {
                 underScores[i] = userGuesses;
                 console.log(underScores);
+                winCounter++;
+                winlose();
                 document.getElementById("user-guess").textContent = userGuesses;
 
                 }
@@ -55,8 +60,26 @@ document.onkeyup = function(event){
         wrongLetter.push(userGuesses);
         document.getElementById("guessed").textContent = wrongLetter;
         guessesLeft--;
-        //document.getElementById("lives-score").textContent = guessesLeft;
+        document.getElementById("lives-score").textContent = guessesLeft;
     }
+        if(guessesLeft ===0) {
+            alert("loser");
+            startGame();
+            
+        }
 }
 
 startGame();
+
+
+function winlose(){
+    if(winCounter === randWord.length) {
+        alert("winner");
+        wins++;
+        document.getElementById("wins-score").textContent = wins;
+        startGame();
+        
+    }
+
+
+}
