@@ -70,7 +70,7 @@ var winCounter = 0;
             document.getElementById("lives-score").textContent = guessesLeft;
     }
         if(guessesLeft ===0) {
-            loss--;
+            loss++;
             var sound = document.getElementById("audio_two");
             sound.play();
             document.getElementById("losses-score").textContent = loss;
