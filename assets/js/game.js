@@ -1,7 +1,7 @@
 var wins = 0;
 var loss = 0;       
 var guessesLeft = 9;
-var wordbank = ['Yankees', 'Braves', 'Cardinals', 'Redsox', 'Whitesox', 'Phillies', 'Nationals', 'Reds', 'BlueJays', 'Pirates', 'Mets', 'Rays', 'Rangers', 'Royals', 'Angels','Mariners', 'Mariners', 'Orioles', 'Twins', 'Cubs', 'Astros', 'Dodgers', 'Rockies', 'Marlins' , 'Athletics', 'Brewers', 'Diamondbacks', 'Indians', 'Giants', 'Rockies', 'Padres','Tigers'];
+var wordbank = ['yankees', 'braves', 'cardinals', 'redsox', 'whitesox', 'phillies', 'nationals', 'reds', 'bluejays', 'pirates', 'mets', 'rays', 'rangers', 'royals', 'angels','mariners', 'orioles', 'twins', 'cubs', 'astros', 'dodgers', 'rockies', 'marlins' , 'athletics', 'brewers', 'diamondbacks', 'indians', 'giants', 'rockies', 'padres','tigers'];
 var wrongLetter = [];
 var underScores = [];
 var userGuesses = [];
