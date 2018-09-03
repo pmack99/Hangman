@@ -114,6 +114,7 @@ function winlose(){
         wins++;
         document.getElementById("wins-score").textContent = wins;
         userGuesses = 0;
+        startGame();
     }
 
 
