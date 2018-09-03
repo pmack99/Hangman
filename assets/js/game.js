@@ -49,6 +49,11 @@ var alphabetArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"
         //event.key will save the key pressed
         document.onkeyup = function(event){
         userGuesses = event.key;
+
+        if (alphabetArray.indexOf(userGuesses) < 0){
+            return false;
+            alert("You need to press a letter key between a - z");
+        }
         //return ((userGuesses >= 65 && userGuesses <= 90));
         
 
