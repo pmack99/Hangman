@@ -8,7 +8,7 @@ var userGuesses = [];
 var randWord;
 var winCounter = 0;
 var alphabetArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-
+var remainingLetters;
 
     function startGame(){
 
@@ -26,6 +26,8 @@ var alphabetArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"
     {
         //puts the new info (word length) into the underscores array
         underScores.push('_');
+        remainingLetters = randWord.length;
+        console.log(remainingLetters);
 
     }
         //prints underscores to screen 
@@ -35,14 +37,6 @@ var alphabetArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"
 
 
 }
-    //trying to create a way to allow only a-z inputs
-    //function getAlphabetArray () {
-	//var alphabetArray=[];
-	//for (var i = "a".charCodeAt(0); i <= "z".charCodeAt(0); i++){
-		//alphabetArray.push(String.fromCharCode(i));
-	//}
-	//return alphabetArray;
-//}
 
 
 
@@ -51,17 +45,27 @@ var alphabetArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"
         userGuesses = event.key;
 
         if (alphabetArray.indexOf(userGuesses) < 0){
-            return false;
             alert("You need to press a letter key between a - z");
+            return false;
         }
-        //return ((userGuesses >= 65 && userGuesses <= 90));
-        
+       
+        if (underScores.indexOf(userGuesses) > -1){
+            alert("You guessed that already");
+            return false;
+           
+        }
 
-        //function alphaOnly(event) {
-            //userGuesses = event.key;
-           // return ((userGuesses >= 65 && userGuesses <= 90) || key == 8);
-          
-    
+        if (wrongLetter.indexOf(userGuesses) > -1){
+           alert("You guessed that already");
+           return false;
+           
+        }
+
+        //if (alphabetArray.indexOf(userGuesses) < 0){
+            //return false;
+           // alert("You need to press a letter key between a - z");
+       // }
+
 
     //checking of the userGuess is a letter in the word
         if (randWord.indexOf(userGuesses) > -1) 
@@ -72,6 +76,8 @@ var alphabetArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"
             {
                 underScores[i] = userGuesses;
                 console.log(underScores);
+                remainingLetters--;
+                console.log(remainingLetters);
                 var sound = document.getElementById("audio");
                 sound.play();
                 winCounter++;
@@ -86,6 +92,7 @@ var alphabetArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o"
          else
     {
             wrongLetter.push(userGuesses);
+            console.log(wrongLetter + " wrong letter array");
             document.getElementById("guessed").textContent = wrongLetter;
             var sound = document.getElementById("audio_three");
             sound.play();
@@ -108,7 +115,7 @@ startGame();
 
 
 function winlose(){
-    if(winCounter === randWord.length) {
+    if(remainingLetters === 0) {
         var sound = document.getElementById("audio_four");
         sound.play();
         wins++;
