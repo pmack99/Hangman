@@ -7,6 +7,7 @@ var underScores = [];
 var userGuesses = [];
 var randWord;
 var winCounter = 0;
+var alphabetArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 
 
     function startGame(){
@@ -34,11 +35,28 @@ var winCounter = 0;
 
 
 }
+    //trying to create a way to allow only a-z inputs
+    //function getAlphabetArray () {
+	//var alphabetArray=[];
+	//for (var i = "a".charCodeAt(0); i <= "z".charCodeAt(0); i++){
+		//alphabetArray.push(String.fromCharCode(i));
+	//}
+	//return alphabetArray;
+//}
 
 
-    //event.key will save the key pressed
+
+        //event.key will save the key pressed
         document.onkeyup = function(event){
         userGuesses = event.key;
+        //return ((userGuesses >= 65 && userGuesses <= 90));
+        
+
+        //function alphaOnly(event) {
+            //userGuesses = event.key;
+           // return ((userGuesses >= 65 && userGuesses <= 90) || key == 8);
+          
+    
 
     //checking of the userGuess is a letter in the word
         if (randWord.indexOf(userGuesses) > -1) 
